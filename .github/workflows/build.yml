@@ -19,6 +19,7 @@ jobs:
       - name: Build with Maven
         run: mvn clean compile --batch-mode --no-transfer-progress -Dsilent=true
   sonar:
+    needs: build #ici on peut spécifier la dépendance entre jobs
     name: Sonar analysis
     runs-on: ubuntu-latest #notez que l'analyse est lancé dans un container ubuntu fourni par github
     steps:
