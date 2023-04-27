@@ -17,7 +17,7 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
       - name: Build with Maven
-        run: mvn clean compile --batch-mode --no-transfer-progress -Dsilent=true
+        run: mvn clean package --batch-mode --no-transfer-progress -Dsilent=true
   sonar:
     needs: build #ici on peut spécifier la dépendance entre jobs
     name: Sonar analysis
